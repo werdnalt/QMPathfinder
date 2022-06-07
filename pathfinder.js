@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //your code to run since DOM is loaded and ready
       console.log("document ready");
 
-      // document.querySelectorAll('div[type=UIWindow]')
-
       var statusBarWindow = document.querySelectorAll('div[type=UIStatusBarWindow]')[0]
       statusBarWindow.style.visibility = "hidden";
 
@@ -32,10 +30,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var  i= 0;
       while((node=node.previousElementSibling)!=null) ++i;
       return i;
-
-      // console.log("getChildNumber: ", node);
-      // console.log("node.parentNode.childNodes: ", node.parentNode.childNodes);
-      // return Array.prototype.indexOf.call(node.parentNode.childNodes, node);
     }
 
     function reverseString(s){
@@ -59,15 +53,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     function clicked(event) {
-      // document.body.textContent =
-      //   "clientX: " + event.clientX +
-      //   " - clientY: " + event.clientY;
 
         console.log("click x: ", event.clientX, " click y: ", event.clientY);
 
         var element = document.elementFromPoint(event.clientX, event.clientY);
-
-        // console.log("element is: ", element);
 
         var realElement = element;
 
@@ -78,9 +67,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             return;
           }
         }
-        // console.log("realElement is: ", realElement);
-        // console.log("realElement is: ", realElement.attributes.type);
-        // console.log("realElement is: ", realElement.attributes.view_controller);
 
         if (window.firstElement == null) {
           window.firstElement = realElement;
@@ -97,12 +83,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log("common: ", common);
 
           //find how to get to common from the second element
-          // var number = getChildNumber(window.secondElement)
-          // console.log("number: ", number);
 
           var secondPath = getPathUpToElement(common, secondElement);
           var firstPath = getPathUpToElement(common, firstElement);
-          // console.log("path: ", path);
 
           var path = secondPath + "*" + reverseString(firstPath);
           console.log("path: ", path);
@@ -120,10 +103,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           window.firstElement = null;
           window.secondElement = null;
         }
-
-        // window.f = realElement;
-
-        // a = new CSSOptimumSelector.default(f)
 
     }
 
